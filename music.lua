@@ -7,12 +7,14 @@ local gameMusic = nil
 
 function music.load()
     if love.filesystem.getInfo("menu.mp3") then
-        menuMusic = love.audio.newSource("menu.mp3", "stream")
+      --  menuMusic = love.audio.newSource("menu.mp3", "stream")
+        menuMusic = nil
         menuMusic:setLooping(true)
         menuMusic:setVolume(0.5)
     end
     if love.filesystem.getInfo("maingame.mp3") then
-        gameMusic = love.audio.newSource("maingame.mp3", "stream")
+      --  gameMusic = love.audio.newSource("maingame.mp3", "stream")
+        gameMusic = nil
         gameMusic:setLooping(true)
         gameMusic:setVolume(0.4)
     end

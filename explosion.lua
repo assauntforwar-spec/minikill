@@ -13,7 +13,8 @@ function explosion.load()
         end
     end
     if love.filesystem.getInfo("boom.ogg") then
-        explosion.sound = love.audio.newSource("boom.ogg", "static")
+      --  explosion.sound = love.audio.newSource("boom.ogg", "static")
+        explosion.sound = nil
         explosion.sound:setVolume(0.7)
     end
 end

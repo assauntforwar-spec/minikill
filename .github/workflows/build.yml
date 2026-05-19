@@ -17,23 +17,16 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Download love.js builder
-        run: |
-          git clone https://github.com/Davidobot/love.js.git
-          cd love.js
-          npm install
-
       - name: Install zip
         run: sudo apt-get install -y zip
 
       - name: Package game into .love
         run: |
-          zip -r game.love . -x "*.git*" ".github/*" "love.js/*"
+          zip -r game.love . -x "*.git*" ".github/*"
 
-      - name: Build web version
+      - name: Download and run love.js
         run: |
-          cd love.js
-          node love.js -c ../game.love ../web-build -t "ULTRAMINIKILL"
+          npx love.js -c game.love web-build -t "ULTRAMINIKILL"
 
       - name: Upload web build
         uses: actions/upload-artifact@v4

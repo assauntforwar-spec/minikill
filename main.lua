@@ -1,6 +1,5 @@
 ﻿function love.load()
-    music = require("music")
-    music.load()
+    music = nil
     dash = require("cooldasheffect")
     explosion = require("explosion")
     explosion.load()
